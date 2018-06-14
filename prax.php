@@ -66,7 +66,7 @@
 <body>
 
 <h1>Mahindra First Choice Wheels Ltd. 2018 <br> Data Access Dashboard</h1> 
-<h2> Input details :- </h2>
+<h2> Input details here :- </h2>
 
 <form method="post" id="result_form">
 	<?php include 'index.php';?>
