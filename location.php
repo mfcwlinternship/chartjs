@@ -4,19 +4,23 @@ require_once ("DBController.php");
 
 $db_handle_deux = new DBController;
 
-$query = "SELECT DISTINCT location FROM `ibb_cardetails_tracker";
+$query = "SELECT DISTINCT location FROM ibb_cardetails_tracker";
 
 
 $result = $db_handle_deux->runQuery($query);
-
-
 
 
 ?>
 
 <html>
 
-    <head></head>
+    <head>
+        <style type="text/css">
+            .demotwoInputBox{
+                width: 50%;
+            }    
+        </style>
+    </head>
 
     <body>
         <div class="row">
@@ -36,8 +40,6 @@ $result = $db_handle_deux->runQuery($query);
                             ?>
                     </select>
         </div>
-
-
 
     </body>
 

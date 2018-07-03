@@ -11,8 +11,6 @@
                 width: 640;
                 height: auto; 
          }
-
-
 		 body{
 			 background-color : #C8EEFD;
 			 
@@ -36,7 +34,6 @@
 
     <!-- <style>form{width:10%; margin:100px auto;}</style> -->
 
-
     <script type="text/javascript">
         $(document).ready(function () {
                 $("#dateFrom").datepicker({
@@ -46,7 +43,6 @@
                             minDate: new Date($('#dateFrom').val())
                         });
                        $("#dateFrom").datepicker({dateFormat: "dd/mm/yy"});
-
                     }
                 });
         
@@ -57,7 +53,6 @@
                             maxDate: new Date($('#dateTo').val())
                         });
                         $("#dateTo").datepicker({dateFormat: "dd/mm/yy"});
-
                     }
                 });
             });
@@ -65,19 +60,17 @@
 
 </head>
 <body>
-<h1>ALPHA RELEASE</h1><br>
+
 <h1>Mahindra First Choice Wheels Ltd. 2018 <br> Data Access Dashboard</h1> 
 <h2> Input details here :- </h2>
 
 <form method="post" id="result_form">
-	<?php include 'index.php';?>
+	<?php include 'index2.php';?>
 	<?php include 'client.php';?>
 	<br>
 	<?php include 'location.php';?>
 	<br>
-	<!-- <input type="submit" value="Submit" id="result_button"> -->
-	<input type="submit" class="btn" id="submitButton" value="Send" />
-
+    <input type="submit" value="Submit" id="result_button">
     <style type="text/css">
         #chart-container {
             width: 1000px;
@@ -91,32 +84,24 @@
 </form>
 
   <script>
-
-
-  $("#submitButton").click(function(e) {
+  $("#result_button").click(function(e) {
     e.preventDefault();
     $.ajax({
         type: "POST",
 		url: "http://localhost/chartjs/insert.php",
 		
-
-
 // The location of insert php was changed to fit my computer 
-
-
         data: $('#result_form').serialize(),
        success: function(data) {
 			console.log(data);
 			var date_time = [];
             var c =  [];
             
-
 			for(var i in data) {
 				date_time.push(data[i].date_time);
                c.push(data[i].c);
                 
 			}
-
 			var chartdata = {
 				labels: date_time,
 				datasets : [
@@ -126,18 +111,11 @@
 						borderColor: 'rgba(0, 255, 0, 1)',
 						// hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
 						// hoverBorderColor: 'rgba(200, 200, 0, 0.75)',
-
 						data: c
 					}
 				]
 			}
-
-			if(barGraph){
-				barGraph.destroy();
-			}
-
 			var ctx = $("#mycanvas");
-			
 			var barGraph = new Chart(ctx, {
 				type: "line",
                 data: chartdata,

@@ -6,30 +6,32 @@ $countryResult = $db_handle->runQuery($query);
 ?>
 <html>
 <head>
-<TITLE>Dynamically Load Dependent Dropdown on Multi-Select using PHP and
-    jQuery</TITLE>
+<TITLE>Dynamically Load Dependent Dropdown on Multi-Select using PHP and jQuery</TITLE>
 
 
 <head>
 <style>
 body {
-    width: 1280px;
+    width: 610px;
     font-family: calibri;
 }
-
-.row {
-  width:400px;
-  float:left;
-  margin: 10px 10px;
+.frmDronpDown {
+    /* border: 1px solid #7ddaff; */
+    background-color: #C8EEFD;
+    margin: 20px 0px;
+    /* padding: 40px; */
 }
-
-#dateFrom{
-    width:50%;
-}
-#dateTo{
-    width:50%;
-}
-
+    /* border-radius: 4px; */
+/* .demoInputBox {
+    padding: 10px;
+    border: #bdbdbd 1px solid;
+    border-radius: 4px;
+    background-color: #FFF;
+    width: 50%;
+} */
+/* .row {
+    padding-bottom: 15px;
+} */
 </style>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"
     type="text/javascript"></script>
@@ -83,20 +85,17 @@ function getState() {
             });
         </script>
 </head>
-<body>
-    <div class = "row">
-        <label>Select Start Date:</label><br />
-        <!-- <input type="text" id="start" placeholder="Start Date">  -->
-        <input type="text" name="dateFrom" id="dateFrom" readonly="true" value="" class="textbox" />
-
-        <br><br>
-        <label>Select End Date:</label><br />
-        <!-- <input type="text" id="end" placeholder="End Date"> -->
-        <input type="text" name="dateTo" id="dateTo" readonly="true" value="" class="textbox" />
-    </div>
-
-
-    <div>
+<body >
+    <div style = "background-color:"#C8EEFD" >
+    Select Start Date: <br>
+    <!-- <input type="text" id="start" placeholder="Start Date">  -->
+    <input type="text" name="dateFrom" id="dateFrom" readonly="true" value="" class="textbox" />
+    <br><br>
+    Select End Date: <br>
+    <!-- <input type="text" id="end" placeholder="End Date"> -->
+    <input type="text" name="dateTo" id="dateTo" readonly="true" value="" class="textbox" />
+    
+    <div class="frmDronpDown">
         <div class="row">
             <label>Make:</label><br /> <select
                 id="country-list" name="country-list" 
@@ -110,6 +109,7 @@ foreach ($countryResult as $country) {
 <?php
 }
 ?>
+<br>
 </select>
         </div>
         <div class="row">
@@ -118,6 +118,7 @@ foreach ($countryResult as $country) {
                 <option value="">Select Model</option>
             </select>
         </div>
+    </div>
     </div>
 </body>
 </html>

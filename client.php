@@ -4,7 +4,7 @@ require_once ("DBController.php");
 
 $db_handle_deux = new DBController;
 
-$query = "SELECT DISTINCT cpmodule FROM `ibb_cardetails_tracker";
+$query = "SELECT DISTINCT cpmodule FROM ibb_cardetails_tracker";
 
 
 $result = $db_handle_deux->runQuery($query);
@@ -13,7 +13,13 @@ $result = $db_handle_deux->runQuery($query);
 
 <html>
 
-    <head></head>
+    <head>
+    <style type="text/css">
+            .demoInputBox{
+                width: 50%;
+            }    
+        </style> 
+    </head>
 
     <body>
         <div class="row">
